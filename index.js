@@ -4,7 +4,7 @@ const url = "https://api.twitter.com";
 
 exports.handler = async (event) => {
     let path = event.path;
-    const queryMultiString = event.multiValueQueryStringParameters;
+    const queryMultiString = event.multiValueQueryStringParameters || {};
     const queryParams = Object.entries(queryMultiString)
         .map(key => key[0] + "=" + key[1].join(','))   
         .join('&');
@@ -14,7 +14,7 @@ exports.handler = async (event) => {
     }
 
     let headers = event.headers || {};
-    headers["Authorization"] = process.env.AUTHORIZATION_TOKEN;
+    headers["Authorization"] = headers["Authorization"] || process.env.AUTHORIZATION_TOKEN;
     delete headers['Host'];
     const body = event.body;
     const method = event.httpMethod;
