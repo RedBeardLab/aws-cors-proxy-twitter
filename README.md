@@ -12,13 +12,17 @@ Since I know you are lazy, you can just upload the `.zip` included in the reposi
 
 ## Authentication
 
-By default it will set the `Authotization` to the env variable: `AUTHORIZATION_TOKEN`.
+By default it will set the `Authorization` to the env variable: `AUTHORIZATION_TOKEN`.
 
 You should set the `AUTHORIZATION_TOKEN` to your token, that should looks somehow like this: `Bearer ...long string...`.
 
 Include both the `Bearer` and the whitespace just after the `Bearer` in the env variable.
 
 To get the token you can follow [this guide](https://developer.twitter.com/en/docs/basics/authentication/oauth-2-0/bearer-tokens) or even [this gist](https://gist.github.com/skaterdav85/be8b4cc9558b3b6ab6cbef23150debe2)
+
+## CORS
+
+The function set the header of the response `Access-Control-Allow-Origin` to the value of the environmental variable `ACCESS_CONTROL_ALLOW_ORIGIN`.
 
 ## Support and help
 
