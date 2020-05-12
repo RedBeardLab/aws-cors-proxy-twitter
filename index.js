@@ -40,6 +40,7 @@ exports.handler = async (event) => {
 	    response['body'] = '';
     }
     response['headers'] = proxyResponse.headers;
+    response['headers']['Access-Control-Allow-Origin'] = process.env.ACCESS_CONTROL_ALLOW_ORIGIN;
     response['isBase64Encoded'] = false;
     
     console.log(response);
